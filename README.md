@@ -32,4 +32,33 @@ This issue has been reported to the `react-select` maintainers [here](<https://g
 
 ---
 
-Please replace `<link to your issue>` with the actual link to the issue you've created. This will allow others to follow the conversation around the issue and possibly contribute to the solution.
+## Code 
+
+The `react-select` implementation can be found in `modules\select\widget\ts\views\select.tsx` file.
+
+
+```ts
+import React, { useState } from "react";
+import Select from "react-select";
+
+const options = [
+  { value: "chocolate", label: "Chocolate" },
+  { value: "strawberry", label: "Strawberry" },
+  { value: "vanilla", label: "Vanilla" },
+];
+
+export function SelectComponent() {
+  const [selectedOption, setSelectedOption] = React.useState(null);
+
+  return (
+    <div className="App">
+      <Select
+        defaultValue={selectedOption}
+        onChange={setSelectedOption}
+        options={options}
+      />
+    </div>
+  );
+}
+
+```
