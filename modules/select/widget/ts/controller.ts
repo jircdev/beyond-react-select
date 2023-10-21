@@ -6,11 +6,4 @@ class Controller extends PageReactWidgetController {
 	get Widget() {
 		return View;
 	}
-
-	connectedCallback() {
-		console.log(0.4, 'aja');
-	}
-	show() {
-		//console.log(10, this);
-	}
 }

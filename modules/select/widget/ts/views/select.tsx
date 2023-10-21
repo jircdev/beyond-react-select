@@ -13,7 +13,7 @@ export function SelectComponent({ container }) {
 	const [selectedOption, setSelectedOption] = React.useState(null);
 
 	const myCache = createCache({ key: 'container', container: container.holder });
-	console.log(0.3, myCache);
+
 	return (
 		<div className='App'>
 			<CacheProvider value={myCache}>
