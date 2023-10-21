@@ -1,9 +1,16 @@
-import {PageReactWidgetController} from '@beyond-js/react-18-widgets/page';
-import {View} from "./views";
+import { PageReactWidgetController } from '@beyond-js/react-18-widgets/page';
+import { View } from './views';
 
 export /*bundle*/
 class Controller extends PageReactWidgetController {
-    get Widget() {
-        return View;
-    }
+	get Widget() {
+		return View;
+	}
+
+	connectedCallback() {
+		console.log(0.4, 'aja');
+	}
+	show() {
+		//console.log(10, this);
+	}
 }

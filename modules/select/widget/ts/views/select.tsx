@@ -1,22 +1,24 @@
-import React, { useState } from "react";
-import Select from "react-select";
+import React from 'react';
+import Select from 'react-select';
+import createCache from '@emotion/cache';
+import { CacheProvider } from '@emotion/react';
 
 const options = [
-  { value: "chocolate", label: "Chocolate" },
-  { value: "strawberry", label: "Strawberry" },
-  { value: "vanilla", label: "Vanilla" },
+	{ value: 'chocolate', label: 'Chocolate' },
+	{ value: 'strawberry', label: 'Strawberry' },
+	{ value: 'vanilla', label: 'Vanilla' },
 ];
 
-export function SelectComponent() {
-  const [selectedOption, setSelectedOption] = React.useState(null);
+export function SelectComponent({ container }) {
+	const [selectedOption, setSelectedOption] = React.useState(null);
 
-  return (
-    <div className="App">
-      <Select
-        defaultValue={selectedOption}
-        onChange={setSelectedOption}
-        options={options}
-      />
-    </div>
-  );
+	const myCache = createCache({ key: 'container', container: container.holder });
+	console.log(0.3, myCache);
+	return (
+		<div className='App'>
+			<CacheProvider value={myCache}>
+				<Select defaultValue={selectedOption} onChange={setSelectedOption} options={options} />
+			</CacheProvider>
+		</div>
+	);
 }
