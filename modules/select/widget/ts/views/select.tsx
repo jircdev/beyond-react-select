@@ -12,13 +12,9 @@ const options = [
 export function SelectComponent({ container }) {
 	const [selectedOption, setSelectedOption] = React.useState(null);
 
-	const myCache = createCache({ key: 'container', container: container.holder });
-
 	return (
 		<div className='App'>
-			<CacheProvider value={myCache}>
-				<Select defaultValue={selectedOption} onChange={setSelectedOption} options={options} />
-			</CacheProvider>
+			<Select defaultValue={selectedOption} onChange={setSelectedOption} options={options} />
 		</div>
 	);
 }
